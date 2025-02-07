@@ -12,7 +12,7 @@ ARG TDM_VERSION_TAG
 ENV LANG=en_US.UTF-8
 ENV DARK_MODE=1
 ENV KEEP_APP_RUNNING=1
-ENV APP_ICON_URL=https://raw.githubusercontent.com/fireph/TwitchDropsMiner-Alpine/master/appimage/pickaxe.png
+ENV APP_ICON_URL=https://raw.githubusercontent.com/c0rrre/TwitchDropsMiner-Alpine/master/appimage/pickaxe.png
 
 # Install dependencies
 RUN add-pkg wget \
@@ -36,7 +36,7 @@ RUN case "${TARGETARCH}${TARGETVARIANT}" in \
         "386")  BINARY_SUFFIX="-386" ;; \
         *)        echo "Unsupported architecture: ${TARGETARCH}${TARGETVARIANT}" && exit 1 ;; \
     esac && \
-    wget -P /tmp/ https://github.com/fireph/TwitchDropsMiner-Alpine/releases/download/v${TDM_VERSION_TAG}/TwitchDropsMiner-linux-musl${BINARY_SUFFIX}.tar.gz && \
+    wget -P /tmp/ https://github.com/c0rrre/TwitchDropsMiner-Alpine/releases/download/v${TDM_VERSION_TAG}/TwitchDropsMiner-linux-musl${BINARY_SUFFIX}.tar.gz && \
     mkdir /TwitchDropsMiner && \
     cd /tmp && \
     tar -zxvf TwitchDropsMiner-linux-musl${BINARY_SUFFIX}.tar.gz && \
