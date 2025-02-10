@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "config:recommended"
+  ],
+  "forkProcessing": "enabled",
+  "dependencyDashboard": true,
+  "dependencyDashboardApproval": true,
+  "assignees": ["c0rrre"],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "prConcurrentLimit": 10,
+      "commitMessagePrefix": "[docker] ",
+      "reviewers": [
+        "c0rrre"
+      ]
+    },
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "prConcurrentLimit": 99,
+      "commitMessagePrefix": "[github-action] ",
+      "reviewers": [
+        "c0rrre"
+      ]
+    }
+  ]
+}
